@@ -7,10 +7,10 @@ const router = Router()
 
 router.get('/', getAll);
 router.get('/Comp', getName);
-router.get('/:id', getCompbyId);
+router.get('/id/:id', getCompbyId);
 router.get('/Comp/:nome', getCompName);
-router.post('/', addComp);
-router.delete('/:id',removeComp);
-router.put('/:id', updateComp);
+router.post('/add', addComp);
+router.delete('/remove/:id',removeComp);
+router.put('/update/:id', updateComp);
 
-export default router
+export default router;

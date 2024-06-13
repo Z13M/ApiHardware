@@ -32,12 +32,15 @@ export const getCompName = (req, res) => {
 
 export const addComp = (req,res) => {
     const { nome_componente, desc_componente } = req.body;
-
+    if(!nome_componente){
+        res.send("NENHUM VALOR FOI ADICIONADO!!!")
+    }else{
     bd.query('INSERT INTO componentes (nome_componente , desc_componente) VALUES (?, ?)',
     [nome_componente, desc_componente], (err,result) => {
         if(err) throw err;
         res.send({nome_componente, desc_componente})
-    })
+        })
+    };
 };
 
 export const removeComp = (req,res) => {

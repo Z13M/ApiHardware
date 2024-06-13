@@ -9,5 +9,5 @@ app.use(express.json())
 app.use('/', router)
 
 app.listen(port, ()=> {
-    console.log('conectaido')
+    console.log('conectado na porta 3060')
 })
